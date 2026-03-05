@@ -61,3 +61,17 @@ def resources():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+from flask import Flask
+
+app = Flask(__name__)
+
+# Homepage route — required for root URL
+@app.route("/")
+def home():
+    return "Hello, world!"  # or your homepage content
+
+# Example additional route
+@app.route("/about")
+def about():
+    return "About this project"
