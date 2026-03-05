@@ -62,16 +62,33 @@ def resources():
 if __name__ == '__main__':
     app.run(debug=True)
 
-from flask import Flask
+
+# Making website live on Render
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-# Homepage route — required for root URL
+# Homepage
 @app.route("/")
 def home():
-    return "Hello, world!"  # or your homepage content
+    return render_template("index.html")
 
-# Example additional route
-@app.route("/about")
-def about():
-    return "About this project"
+# Caregivers page
+@app.route("/caregivers")
+def caregivers():
+    return render_template("caregivers.html")
+
+# Resources page
+@app.route("/resources")
+def resources():
+    return render_template("resources.html")
+
+# Quiz page
+@app.route("/quiz")
+def quiz():
+    return render_template("quiz.html")
+
+# Stages page
+@app.route("/stages")
+def stages():
+    return render_template("stages.html")
