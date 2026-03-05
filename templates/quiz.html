@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alzheimer's Quiz</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Test Your Knowledge</h1>
+            <p class="hero-subtitle">See how much you know about Alzheimer's Disease</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="quiz-main">
+        <div class="quiz-container">
+            <form method="POST" class="quiz-form">
+                <div class="question-card">
+                    <div class="question-number">Question 1 of 4</div>
+                    <h3>Which stage of Alzheimer's shows severe memory loss?</h3>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="q1" value="incorrect"> Stage 3
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q1" value="correct"> Stage 5
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q1" value="incorrect"> Stage 2
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-number">Question 2 of 4</div>
+                    <h3>What is the primary affected function in early-stage Alzheimer's?</h3>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="q2" value="correct"> Memory
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q2" value="incorrect"> Vision
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q2" value="incorrect"> Hearing
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-number">Question 3 of 4</div>
+                    <h3>Which stage can last for years or decades?</h3>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="q3" value="correct"> Preclinical Stage (Stage 1)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q3" value="incorrect"> Moderate Dementia (Stage 4)
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q3" value="incorrect"> Severe Dementia (Stage 5)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-card">
+                    <div class="question-number">Question 4 of 4</div>
+                    <h3>Which of the following is a common early sign of Alzheimer's?</h3>
+                    <div class="options">
+                        <label class="option-label">
+                            <input type="radio" name="q4" value="incorrect"> Sudden vision loss
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q4" value="incorrect"> Hearing impairment
+                        </label>
+                        <label class="option-label">
+                            <input type="radio" name="q4" value="correct"> Memory loss affecting daily tasks
+                        </label>
+                    </div>
+
+
+                <button type="submit" class="submit-btn">Submit Quiz</button>
+            </form>
+
+            {% if result %}
+            <div class="result-section">
+                <div class="result-card">
+                    <h2>Your Results</h2>
+                    <div class="result-message">{{ result }}</div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </main>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <a href="/">Home</a> |
+        <a href="/stages">Five Stages</a> |
+        <a href="/caregivers">Caregiver Info</a> |
+        <a href="/quiz">Take a Quiz</a> |
+        <a href="/resources">Resources</a>
+    </nav>
+</body>
+</html>
